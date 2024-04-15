@@ -11,6 +11,24 @@
   - 100개 단위로 LimitOffsetPagination을 진행하여 서버의 과부하 예방
   - 조회 성능 개선을 위한 DB 인덱스 생성
 - TestCase 라이브러리를 이용한 단위테스트 구성
+---
+위의 기능을 토대로 다음과 같은 API 테스트가 가능합니다.
+
+- GET
+post/  :  게시글 확인 (100개 단위 페이징)
+post/:id/  :  게시글 자세히 확인
+
+- POST
+user/register  :  회원가입
+user/login/  :  인증을 통해 JWT 발급
+user/logout/  :  JWT 삭제
+post/  :  글 생성
+
+- PUT
+post/  :  글 수정
+
+- DELETE
+post/  :  글 삭제
 
 ## 🕐 개발 기간
 - 2024.02.25 ~ 2024.03.22
