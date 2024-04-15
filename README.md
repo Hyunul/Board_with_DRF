@@ -14,20 +14,20 @@
 ---
 위의 기능을 토대로 다음과 같은 API 테스트가 가능합니다.
 
-- GET
+- GET<br>
 post/  :  게시글 확인 (100개 단위 페이징)
 post/:id/  :  게시글 자세히 확인
 
-- POST
-user/register  :  회원가입
-user/login/  :  인증을 통해 JWT 발급
-user/logout/  :  JWT 삭제
-post/  :  글 생성
+- POST<br>
+user/register  :  회원가입<br>
+user/login/  :  인증을 통해 JWT 발급<br>
+user/logout/  :  JWT 삭제<br>
+post/  :  글 생성<br>
 
-- PUT
+- PUT<br>
 post/  :  글 수정
 
-- DELETE
+- DELETE<br>
 post/  :  글 삭제
 
 ## 🕐 개발 기간
