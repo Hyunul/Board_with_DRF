@@ -1,21 +1,24 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import Test from './components/Test';
-import Post from './components/BoardList';
-import BoardDetail from './components/BoardDetail';
+import Example from './components/Reponsive';
+import { renderLineChart } from './components/Chart';
 
 function App() {
   return (
-    <Router>
-      <Link to="/Test/">Test</Link>
-      <Link to="/post/">Post</Link>
-      <Routes>
-        <Route path="/Test/" element={<Test />} />
-        <Route path="/post/" element={<Post />} />
-        <Route path="/post/:id/" element={<BoardDetail />} />
-      </Routes>
-    </Router>
+    <div>
+      {/* <Router>
+        <Link to="/Test/">Test</Link>
+        <Routes>
+          <Route path="/Test/" element={<Test />} />
+        </Routes>
+      </Router> */}
+      <Example />
+      <renderLineChart />
+
+    </div>
   );
 }
 
 export default App;
+

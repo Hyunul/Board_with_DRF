@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-3g%%#vjo0qd4&1ob#vl4d0rsm=dfchytho*d@8#k#ui%rje@1%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -49,9 +49,13 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
 
+    'channels',
+
     'users',
-    'board',
+    'chart',
 ]
+
+ASGI_APPLICATION = 'drf_prac.asgi.application'
 
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None # username 필드 사용 x
 ACCOUNT_EMAIL_REQUIRED = True            # email 필드 사용 o
@@ -113,7 +117,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -121,6 +125,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'drf_prac.urls'
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8000']
+CSRF_COOKIE_SECURE = False
 
 import os
 
@@ -148,8 +155,12 @@ WSGI_APPLICATION = 'drf_prac.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'agriflow',
+        'USER' : 'root',
+        'PASSWORD' : '1234', # 설정한 비밀번호로 적어주면 된다.
+        'HOST' : '127.0.0.1',
+        'PORT' : '3306',
     }
 }
 
